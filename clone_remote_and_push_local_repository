@@ -161,7 +161,7 @@ and to push content to it(push)
     git push -u origin master
 --> after you enter username and password,authentication will fail because thee Git remote repository is rejecting your username and password authentication because GitHub no longer supports password authentication over HTTPS as of August 13, 2021. Instead, it recommends using a personal access token (PAT) or an SSH key to authenticate. to create your token follow the bellow
 -Log in to your GitHub account and navigate to your profile.
-
+-after entering this command for the first time "git push -u origin main " next pust you don't need it,you  just need "git push"
 -Click on the "Settings" button on the right side of the page.
 
 -In the left sidebar, click on "Developer settings"(last tab) and then click on "Personal access tokens" then token classic.
