@@ -116,28 +116,33 @@ git commit -m "Initial commit"
 =====================================================================================================
 =====================================================================================================
 
-Go to the remote repository platform (e.g., GitHub, GitLab) and create a new repository. Do not initialize it with a README, .gitignore, or license file.
+-Go to the remote repository platform (e.g., GitHub, GitLab) and create a new repository. Do not initialize it with a README, .gitignore, or license file.
 
 -Copy the remote repository URL from the platform.
 https://github.com/dontsopcyrille/odiia_project.git
+================================================================================================================================================
+-Add the remote repository to your local Git configuration:
+git remote add origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git
 
-Add the remote repository to your local Git configuration:
 
-
-
-git remote add origin https://github.com/user/repo.git--> here you replace user/repo with your directory
+{git remote add origin https://github.com/user/repo.git--> here you replace user/repo with your directory
 -->git remote add origin https://github.com/dontsopcyrille/odiia_project.git
 NB: there is a typo on odilia,here it is written odilia instead,to correct it,you have to use
 the bellow command 
 git remote set-url origin https://github.com/dontsopcyrille/odilia_project.git
   
 but in reality the command bellow helped set it up
-git remote set-url origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git
+git remote set-url origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git}
 
 ====================================================================================================
 =====================================================================================================
 -Replace https://github.com/user/repo.git with the URL of the remote repository you created in step 5.
-git remote add origin https://github.com/dontsopcyrille/odilia_project.git
+git remote add origin https://github.com/dontsopcyrille/odilia_project.git ---> won't work cause new authentication on git require key
+git remote add origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git--> real command 
+for new way of authentication on git--> in other words,user "cyrille" is with password :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"(my generated token)
+is trying to login into github repository "/dontsopcyrille/odilia_project.git"
+git remote set-url origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git--> this command
+when you messed up the real command
 ====================================================================================================
 =====================================================================================================
 
