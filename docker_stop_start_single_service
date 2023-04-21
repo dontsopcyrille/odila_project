@@ -1,0 +1,51 @@
+-Stop and remove the yelb-ui container:
+
+docker-compose stop yelb-ui
+docker-compose rm -f yelb-ui
+
+-Pull the latest yelb-ui image:
+
+
+
+docker-compose pull yelb-ui
+
+-Recreate and start the yelb-ui container
+
+docker-compose up -d yelb-ui
+
+These commands will only affect the yelb-ui service and leave the other services in the docker-compose.yml file untouched. If everything is set up correctly, you should have a fresh yelb-ui container running without any issues.
+
+======================================================================================
+f the main.bundle.js file is corrupted after pulling the latest image and recreating the container, you should follow the same steps mentioned above to verify the contents of the image to ensure the file is not corrupted within the image.
+docker run -it --rm mreferre/yelb-ui:0.7 /bin/sh
+
+
+docker run -it --rm mreferre/yelb-ui:0.7 /bin/sh
+
+
+    Once you are inside the container's shell, navigate to the directory where the main.bundle.js file is located (it might be in the /usr/share/nginx/html directory, depending on the image configuration). Check the contents of the main.bundle.js file using a text editor like cat or vi:
+
+cat /usr/share/nginx/html/main.bundle.js
+
+
+Using a different image version:
+
+    In your docker-compose.yml file, change the image version of the yelb-ui service. For example, if you are using version 0.7, you could try using version 0.6 or another available version:
+
+services:
+  yelb-ui:
+    image: mreferre/yelb-ui:0.6
+    
+    After modifying the docker-compose.yml file, stop and remove the existing yelb-ui container, pull the new image, and recreate the container:
+
+bash
+
+docker-compose stop yelb-ui
+docker-compose rm -f yelb-ui
+docker-compose pull yelb-ui
+docker-compose up -d yelb-ui
+
+
+    First, run a temporary container using the yelb-ui image, and access its shell:
+
+

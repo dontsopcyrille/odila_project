@@ -1,0 +1,214 @@
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+                               **** part 1 :2-clone remote directory to local directory****
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+=======================================================================================================
+
+-push local  directory to remote directory
+
+    Install Git using the package manager for your distribution. For example, on Ubuntu or Debian-based systems, use the following command:
+
+ 
+
+        sudo apt-get update
+        sudo apt-get install git
+========================================================================================================
+========================================================================================================
+Verify Git installation:
+
+    Open a terminal (Command Prompt on Windows, Terminal on macOS or Linux) and run the following command:
+
+    
+    git --version
+
+    If Git is installed correctly, you should see the version number in the output.
+=======================================================================================================
+========================================================================================================
+Configure Git:
+
+    Set your name and email address, which will be used to identify you in your commits:
+
+    arduino
+
+    git config --global user.name "Your Name"
+    git config --global user.email "youremail@example.com"
+=======================================================================================================
+========================================================================================================
+Clone a remote repository:
+
+    Navigate to the remote repository on a platform like GitHub or GitLab and find the "Clone" or "Clone with HTTPS" button. Click it to copy the repository URL.
+
+    Open a terminal and navigate to the directory where you want to clone the repository. For example:
+
+    bash
+
+cd /path/to/your/odilla_project
+
+Run the git clone command followed by the copied repository URL:
+
+
+
+git clone https://github.com/user/repo.git
+-->git clone https://github.com/dontsopcyrille/python-selenium-automation.git
+
+
+Replace https://github.com/user/repo.git with the URL of the remote repository you want to clone.
+
+The remote repository will be cloned into a new directory in the specified location. Navigate to the newly created directory:
+
+
+
+        cd repo
+
+        Replace repo with the name of the repository.
+
+Now you have installed Git, configured it, and cloned a remote repository. You can start working on the project files locally.
+======================================================================================================
+========================================================================================================
+======================================================================================================
+========================================================================================================
+
+                                ****part 2 :-push local  directory to remote directory***
+======================================================================================================
+========================================================================================================
+======================================================================================================
+========================================================================================================
+push local  directory to remote directory
+
+    Navigate to your local repository using the terminal (Command Prompt on Windows, Terminal on macOS, or Linux):
+
+ 
+
+cd /path/to/your/local/odilla project 
+=====================================================================================================
+=====================================================================================================
+
+
+-Initialize a Git repository in the local directory, if you haven't already:
+
+git init
+=====================================================================================================
+=====================================================================================================
+
+
+-Add your files to the Git staging area:
+
+
+git add .
+
+The . adds all the files in the directory. You can also add individual files or use wildcards to add specific file types.
+
+git rm --cached python-selenium-automation_clone--> this command if you are tyring to not
+include a repository that you have previouly clone in the staging phase. best practice would 
+be creating a different directory for any clone you want to do,to avoid all of this.
+
+=====================================================================================================
+=====================================================================================================
+
+-Commit your changes with a descriptive message:
+
+
+git commit -m "Initial commit"
+=====================================================================================================
+=====================================================================================================
+
+Go to the remote repository platform (e.g., GitHub, GitLab) and create a new repository. Do not initialize it with a README, .gitignore, or license file.
+
+-Copy the remote repository URL from the platform.
+https://github.com/dontsopcyrille/odiia_project.git
+
+Add the remote repository to your local Git configuration:
+
+
+
+git remote add origin https://github.com/user/repo.git--> here you replace user/repo with your directory
+-->git remote add origin https://github.com/dontsopcyrille/odiia_project.git
+NB: there is a typo on odilia,here it is written odilia instead,to correct it,you have to use
+the bellow command 
+git remote set-url origin https://github.com/dontsopcyrille/odilia_project.git
+  
+but in reality the command bellow helped set it up
+git remote set-url origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git
+
+====================================================================================================
+=====================================================================================================
+-Replace https://github.com/user/repo.git with the URL of the remote repository you created in step 5.
+git remote add origin https://github.com/dontsopcyrille/odilia_project.git
+====================================================================================================
+=====================================================================================================
+
+-Verify that the remote repository has been added:
+
+git remote -v
+root@ubuntu18-desktop:/home/user/odilia_project# git remote -v
+origin	https://github.com/dontsopcyrille/odiia_project.git (fetch)
+origin	https://github.com/dontsopcyrille/odiia_project.git (push)
+--> means that the remote repository is ready up and ready to downloand content from it(fetch) 
+and to push content to it(push)
+====================================================================================================
+=====================================================================================================
+
+-Push your local changes to the remote repository:
+
+
+
+    git push -u origin main  --> default name is master so main might not work("git branch" will tell you the name of your branch and command "git config user.name
+" will tell you about your username)
+    git push -u origin master
+--> after you enter username and password,authentication will fail because thee Git remote repository is rejecting your username and password authentication because GitHub no longer supports password authentication over HTTPS as of August 13, 2021. Instead, it recommends using a personal access token (PAT) or an SSH key to authenticate. to create your token follow the bellow
+-Log in to your GitHub account and navigate to your profile.
+
+-Click on the "Settings" button on the right side of the page.
+
+-In the left sidebar, click on "Developer settings"(last tab) and then click on "Personal access tokens" then token classic.
+
+-Click the "Generate new token" button on the right side of the page.
+
+Give your token a name in the "Note" field. This name should help you identify what the token is used for.
+-then click  on generate again
+-my token is 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 (it set it up for 30 days,so I should regenerate
+a new token in 30 days)
+-enter username and password in this format that will include your token
+Password for 'https://cyrille:<personal-access-token>@github.com': 
+Password for 'https://cyrille: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@github.com':
+
+
+NB: in  "git push -u origin main" we use "-u" when we  connecting to the upsteam(our remote specific 
+project or repository) for the first time and it will prompt us to authenticate with our username and password after that,we can just enter "git push origin main" or 
+just "git push"
+
+
+-more on username and password
+git remote set-url origin https://cyrille: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@github.com/dontsopcyrille/odilia_project.git
+-This worked,had to update mu remote url access,and also on github,check all the prilvilege i want
+to give to those accessing my repo with this token
+
+
+
+====================================================================================================
+=====================================================================================================
+
+
+    Replace main with the name of your local branch if it's different. This command sets the upstream tracking branch so that you can use git push and git pull without specifying the remote and branch names in the future.
+
+Now you have successfully pushed your local repository to the remote repository. You can view your changes on the remote repository platform.
+
+
+
+=======================================================================================================
+=======================================================================================================
+
+remove a previoulsy clone repo or file that you don't want to put in the staging area to be push.
+this happen when you have lot of commit to push and you don't want to list them one by one,so you
+include everythibg and before pushing them remove the one you don't want. this won't delete the 
+repo you don't want but just not including in in the staging area
+
+git rm --cached --> follow by the name of the repo you don't want to include.
+git rm --cached python-selenium-automation_clone
+git rm -f --cached python-selenium-automation_clone--> when you already staged
+
+
