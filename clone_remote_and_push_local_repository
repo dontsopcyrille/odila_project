@@ -53,7 +53,10 @@ Run the git clone command followed by the copied repository URL:
 
 
 git clone https://github.com/user/repo.git
--->git clone https://github.com/dontsopcyrille/python-selenium-automation.git
+-->git clone https://github.com/dontsopcyrille/python-selenium-automation.git-->this command won't work because we setup gihub with a key instead
+of a password in the second part(pushing repo)
+               -real command to clone
+git clone https://cyrille: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@github.com/dontsopcyrille/odilia_project.git
 
 
 Replace https://github.com/user/repo.git with the URL of the remote repository you want to clone.
